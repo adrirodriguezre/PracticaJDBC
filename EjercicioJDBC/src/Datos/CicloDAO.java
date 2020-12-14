@@ -146,6 +146,7 @@ public class CicloDAO implements ICicloDAO{
 		try {
 			
 			ps = c.prepareStatement("INSERT INTO CICLO VALUES ((?), (?), (?));", Statement.RETURN_GENERATED_KEYS);
+			ps.setInt(1, ciclo.getIdCiclo());
 			ps.setString(2, ciclo.getNombreCiclo());
 			ps.setString(3, ciclo.getGrado());
 			ps.executeUpdate();
